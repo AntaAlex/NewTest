@@ -11,9 +11,7 @@ public class Main {
         WebDriver driver = new ChromeDriver();
 
         driver.get("https://ya.ru");
-        WebElement input = driver.findElement(By.id("text"));
-        input.sendKeys("Hello");
-        WebElement button = driver.findElement(By.xpath("//button[@role='button']"));
-        button.click();
+        YandexSearchPage ya = new YandexSearchPage(driver);
+        ya.searchFor();
     }
 }
