@@ -22,9 +22,13 @@ public class YandexSearchPage {
         PageFactory.initElements(driver, this);
     }
     public void searchFor( ) {
-        input.sendKeys("Hello");
+        input.sendKeys("shiki");
         button.click();
-        }
+
+    }
+    public void doesInput() {
+        input.isDisplayed();
+    }
 
 
 
