@@ -1,35 +1,19 @@
 package ru.lanit.edu;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class YandexSearchPage {
+public class YandexSearchPage extends AbstractPage{
 
-    @FindBy(id = "text")
-    private WebElement input;
-
-    @FindBy(xpath = "//button[@role='button']")
-    private WebElement button;
+    public SearchArrow searchArrow;
 
 
     public YandexSearchPage(WebDriver driver) {
-
-
-        PageFactory.initElements(driver, this);
-    }
-    public void searchFor( ) {
-        input.sendKeys("shiki");
-        button.click();
-
-    }
-    public void doesInput() {
-        input.isDisplayed();
+        super(driver);
     }
 
+    public SearchResultsPage searchFor(String query) {
+        searchArrow.searchFor(query);
+        return new SearchResultsPage(driver);
 
-
+    }
 }

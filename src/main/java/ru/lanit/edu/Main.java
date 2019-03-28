@@ -12,7 +12,7 @@ public class Main {
 
         driver.get("https://ya.ru");
         YandexSearchPage ya = new YandexSearchPage(driver);
-        ya.searchFor();
+        ya.searchArrow.searchFor("arrow");
 
     }
 }
